@@ -1,22 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
+@file = Rack::Test::UploadedFile.new(Rails.root + 'orange-beach.jpg', 'image/jpg')
 
+######## SEEDS #########
 
-Itinerary.destroy_all
-puts "Cleared itineraries and event dependents"
+User.destroy_all
+puts "Cleared Users, itineraries dependents, and event dependents"
 
-itinerary = Itinerary.create!(name: 'Trip to Boston')
-itinerary.events.create!(title: 'Duck Tour', date: '6/1/2015', start_time: '07:00', end_time: '08:00', attendees: 'Max, Joe, Steve', desc: 'A boat that goes on land and water, historic tour', image: 'http://s3.amazonaws.com/production.reserve123/images/product/1144-2.jpg')
-itinerary.events.create!(title: 'Library Tour', date: '06/01/2015', start_time: '10:00 AM', end_time: '11:00 AM', attendees: 'Max, Joe, Steve', desc: 'Tour of the Boston Public Library', image: 'http://upload.wikimedia.org/wikipedia/commons/3/30/Boston_Library_eb1.jpg')
-puts "First Itinerary"
+stephanie = User.create!(name: 'Stephanie', email: 'stephanie@gmail.com')
+paul = User.create!(name: 'Paul', email: 'paul@gmail.com')
+roger = User.create!(name: 'Roger', email: 'roger@gmail.com')
 
-itinerary = Itinerary.create!(name: 'Ireland Week')
-itinerary.events.create!(title: 'St Andrews Golf', date: '02-06-2015', start_time: '07:00', end_time: '12:00', attendees: 'Max, Joe, Steve', desc: 'One of the oldest golf courses in the world', image: 'http://www.objetivostandrews.com/img/st-andrews-golf.jpg')
-itinerary.events.create!(title: 'Drink at the Pub', date: 'June-02-2015', start_time: '1:00 PM', end_time: '3:00 PM', attendees: 'Max, Joe, Steve', desc: 'Drink good beer and eat corned beed and hash', image: 'http://upload.wikimedia.org/wikipedia/commons/2/28/Irish_pub_Krakow.JPG')
-puts "Second Itinerary"
+##### Itinerary 1: Stephanie
+itinerary = stephanie.itineraries.create!(name: 'Trip to Boston')
+itinerary.events.create!(title: 'Duck Tour', date: '6/1/2015', start_time: '07:00', end_time: '08:00', attendees: 'Max, Joe, Steve', desc: 'A boat that goes on land and water, historic tour', image: @file)
+# itinerary.events.create!(title: 'Library Tour', date: '06/01/2015', start_time: '10:00 AM', end_time: '11:00 AM', attendees: 'Max, Joe, Steve', desc: 'Tour of the Boston Public Library')
+# puts "First Itinerary inserted"
+
+# ##### Itinerary 2: Paul
+# itinerary = paul.itineraries.create!(name: 'Ireland Week')
+# itinerary.events.create!(title: 'St Andrews Golf', date: '02-06-2015', start_time: '07:00', end_time: '12:00', attendees: 'Paul, Ralph, Josh', desc: 'One of the oldest golf courses in the world')
+# itinerary.events.create!(title: 'Drink at the Pub', date: 'June-02-2015', start_time: '1:00 PM', end_time: '3:00 PM', attendees: 'Paul, Ralph, Josh, Joe', desc: 'Drink good beer and eat corned beed and hash')
+# puts "Second Itinerary inserted"
+
+# ##### Itinerary 2: Roger
+# itinerary = roger.itineraries.create!(name: 'Neals Bachelor Party')
+# itinerary.events.create!(title: 'Bowling', date: '10-11-2015', start_time: '12:00', end_time: '03:00', attendees: 'Neal, Roger, Max, Joe, Steve', desc: 'Roll it straight')
+# itinerary.events.create!(title: 'Dinner at Steakhouse', date: '10-12-2015', start_time: '4:00 PM', end_time: '7:00 PM', attendees: 'Neal, Roger, Max, Joe, Steve', desc: 'Drink good wine and eat steak')
+# puts "Third Itinerary inserted"

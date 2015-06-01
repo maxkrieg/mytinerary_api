@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration
       t.time :end_time
       t.text :attendees
       t.text :desc
-      t.string :image
       t.references :itinerary, index: true, foreign_key: true
 
       t.timestamps null: false
