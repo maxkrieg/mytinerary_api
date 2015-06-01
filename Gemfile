@@ -47,3 +47,5 @@ group :development, :test do
 end
 
 gem 'paperclip', '~> 4.2.1'
+
+gem 'rack-cors', :require => 'rack/cors'
