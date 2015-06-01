@@ -4,4 +4,12 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
   skip_before_filter  :verify_authenticity_token
+
+  # Remove the root element, curly braces surrounding the JSON.
+  def default_serializer_options
+    {
+      root: false
+    }
+  end
+
 end

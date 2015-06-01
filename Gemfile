@@ -49,3 +49,5 @@ end
 gem 'paperclip', '~> 4.2.1'
 
 gem 'rack-cors', :require => 'rack/cors'
+
+gem 'active_model_serializers'
