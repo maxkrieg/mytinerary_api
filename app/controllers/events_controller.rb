@@ -2,7 +2,6 @@ class EventsController < ApplicationController
 
   before_action :set_itinerary
 
-
   def index
     @events = @itinerary.events
     render json: @events
