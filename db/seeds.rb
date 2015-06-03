@@ -4,9 +4,6 @@
 @file = Rack::Test::UploadedFile.new(Rails.root + 'starter_images/orange-beach.jpg', 'image/jpg')
 
 
-
-
-
 ######## SEEDS #########
 
 User.destroy_all
