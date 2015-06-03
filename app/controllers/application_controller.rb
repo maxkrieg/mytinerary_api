@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # skip_before_filter  :verify_authenticity_token
 
-  skip_before_action :verify_authernticity_token, if: :json_request?
+  skip_before_action :verify_authenticity_token, if: :json_request?
   force_ssl if: :ssl_configured?
 
   protected
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     !Rails.env.development?
   end
 
-  def json_request
+  def json_request?
     # request.format.json?
     request.format = :json
   end

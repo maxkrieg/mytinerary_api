@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   def create
     @event = @itinerary.events.build(event_params)
     if @event.save
-      render json: @event, status: :created, location: events_url
+      render json: @event, status: :created
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -48,3 +48,8 @@ class EventsController < ApplicationController
   end
 
 end
+
+
+
+
+

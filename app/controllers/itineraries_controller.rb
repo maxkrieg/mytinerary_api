@@ -1,12 +1,12 @@
 class ItinerariesController < ApplicationController
 
   def index
-    @itineraries = Itinerary.all
+    @itineraries = Itinerary.all.reverse
     render json: @itineraries
   end
 
   def show
-    @itinerary = Itinerary.find_by_name(params[:id])
+    @itinerary = Itinerary.find(params[:id])
     render json: @itinerary
   end
 
