@@ -18,7 +18,7 @@ roger = User.create!(email: 'roger@gmail.com', password: 'rogerpassword')
 
 ##### Itinerary 1: Stephanie
 itinerary = stephanie.itineraries.create!(name: 'Trip to Boston')
-itinerary.events.create!(title: 'Duck Tour', date: '6/1/2015', location: 'Long Wharf, Boston', start_time: '07:00', end_time: '08:00', attendees: 'Max, Joe, Steve', desc: 'A boat that goes on land and water, historic tour')
+itinerary.events.create!(title: 'Duck Tour', date: '6/1/2015', location: 'Long Wharf, Boston', start_time: '07:00', end_time: '08:00', attendees: 'Max, Joe, Steve', desc: 'A boat that goes on land and water, historic tour', image: @file)
 itinerary.events.create!(title: 'Library Tour', date: '06/01/2015', location: 'Copley Square', start_time: '10:00 AM', end_time: '11:00 AM', attendees: 'Max, Joe, Steve', desc: 'Tour of the Boston Public Library')
 puts "Stephanie Itinerary inserted"
 
