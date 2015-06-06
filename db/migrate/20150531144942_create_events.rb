@@ -3,9 +3,9 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :title, null: false
       t.string :location, null: false
-      t.date :date, null: false
-      t.time :start_time
-      t.time :end_time
+      t.date :date
+      t.text :start_time
+      t.text :end_time
       t.text :attendees
       t.text :desc
       t.references :itinerary, index: true, foreign_key: true

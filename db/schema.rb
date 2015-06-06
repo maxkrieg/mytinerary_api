@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20150601215735) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
+    t.string   "title",              null: false
+    t.string   "location",           null: false
     t.date     "date"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.text     "start_time"
+    t.text     "end_time"
     t.text     "attendees"
     t.text     "desc"
     t.integer  "itinerary_id"
