@@ -8,4 +8,6 @@ class EventSerializer < ActiveModel::Serializer
       "<span></span>"
     end
   end
+
+  # create virtual attributes to format date and times???
 end

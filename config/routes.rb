@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'auth#login'
 
   post '/register' => "auth#register"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
