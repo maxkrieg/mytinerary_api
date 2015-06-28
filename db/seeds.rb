@@ -14,9 +14,9 @@
 User.destroy_all
 puts "Cleared Users, itineraries dependents, and event dependents"
 
-stephanie = User.create!(email: 'stephanie@gmail.com', password: 'stephanie123')
-paul = User.create!(email: 'paul@gmail.com', password: 'paul123')
-roger = User.create!(email: 'roger@gmail.com', password: 'roger123')
+stephanie = User.create!(first_name: 'Stephanie', last_name: 'Wong', email: 'stephanie@gmail.com', password: 'stephanie123')
+paul = User.create!(first_name: 'Paul', last_name: 'Dacey', email: 'paul@gmail.com', password: 'paul123')
+roger = User.create!(first_name: 'Roger', last_name: 'Rabbit', email: 'roger@gmail.com', password: 'roger123')
 puts "Users created"
 
 
