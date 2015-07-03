@@ -13,7 +13,7 @@ class AuthController < ApplicationController
   def register
     @user = User.new(register_params)
     if @user.save
-      render json: @user, status: :created, location: users_url
+      render json: @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class AuthController < ApplicationController
   end
 
   def register_params
-    params.requre(:user).permit(:email, :password)
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 
 end
